@@ -2,10 +2,6 @@
     grid-area: c;
     background-color: aliceblue;
 }
-.content img{
-    width:900px;
-}
-
-.item{
-    color: #ff7f50;
+.content img {
+    width: 900px;
 }
