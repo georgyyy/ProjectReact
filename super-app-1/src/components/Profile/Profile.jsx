@@ -1,17 +1,15 @@
 import React from 'react';
 import classes from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import { PostsElements } from "../../index";
 
-const Profile = () => {
-    return(
-        <div className={classes.content}>
-            <img src="https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg" alt=""/>
-            <div>
-                ava + description
-            </div>
-            <MyPosts />
+const Profile = (props) => {
+    return (
+        <div>
+            <ProfileInfo/>
+            <MyPosts PostsElements={PostsElements}/>
         </div>
-
     )
 }
 
