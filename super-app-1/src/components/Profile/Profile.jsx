@@ -5,10 +5,11 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import { PostsElements } from "../../index";
 
 const Profile = (props) => {
+
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts PostsElements={PostsElements}/>
+            <MyPosts PostsData={props.ProfilePage.PostsData} newPostText={props.ProfilePage.NewPostText} dispatch={props.dispatch}/>
         </div>
     )
 }

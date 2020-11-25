@@ -8,17 +8,18 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import { BrowserRouter } from "react-router-dom";
 import Route from "react-router-dom/es/Route";
-import { DialogsElements, MessageElements, PostsElements } from "./index";
 
-const App = () => {
+
+const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <NavBar/>
                 <div className='app-wrapper-content'>
-                    <Route path="/profile" render={() => <Profile /> } />
-                    <Route path="/dialogs" render={() => <Dialogs DialogElements={DialogsElements} MessageElements={MessageElements}/>}/>
+                    <Route path="/profile" render={() => <Profile ProfilePage={props.state.ProfilePage} dispatch={props.dispatch}/> } />
+                    <Route path="/dialogs" render={() => <Dialogs DialogsData={props.state.MessagesPage.DialogsData} NewMessageText={props.state.MessagesPage.NewMessageText} MessagesData={props.state.MessagesPage.MessagesData}  dispatch={props.dispatch}/>}/>
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>
                 </div>
